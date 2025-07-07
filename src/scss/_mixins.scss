@@ -41,3 +41,11 @@
   -ms-transform: $trans;
   -o-transform: $trans;
 }
+
+@mixin border-radius($border) {
+  border-radius: $border;
+  -webkit-border-radius: $border;
+  -moz-border-radius: $border;
+  -ms-border-radius: $border;
+  -o-border-radius: $border;
+}
