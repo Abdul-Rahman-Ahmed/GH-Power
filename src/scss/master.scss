@@ -16,11 +16,11 @@ body {
   font-size: 18px;
 }
 
-.container {
-  padding: 0 50px;
+.container:not(header) {
+  padding: 50px;
   @include breakPoints(xl) {
     & {
-      padding: 0 25px;
+      padding: 50px 25px;
     }
   }
 }
@@ -74,8 +74,6 @@ ul {
   justify-items: center;
   align-items: center;
   gap: 20px;
-  padding-top: 40px;
-
   div {
     width: 50%;
     .paragraph {
@@ -100,6 +98,8 @@ ul {
 
   .img img {
     width: 100%;
+    filter: drop-shadow(0px 0px 5px black);
+    -webkit-filter: drop-shadow(0px 0px 5px black);
   }
 }
 
@@ -117,7 +117,6 @@ ul {
 
 .background {
   position: relative;
-  width: 100%;
 }
 
 .dark::after {
@@ -132,6 +131,7 @@ ul {
 .light::after {
   backdrop-filter: blur(2px);
 }
+
 .cover {
   background-size: cover;
 }
@@ -139,4 +139,24 @@ ul {
 .index {
   position: relative;
   z-index: 1;
+}
+
+.qoute {
+  background-image: url(../assets/h2About/qoute.jpg);
+  height: 300px;
+  div {
+    width: 70%;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    border: solid 1px $helper-color;
+    border-right: none;
+    border-left: none;
+    padding: 20px;
+    font-style: italic;
+    z-index: 1;
+    @include breakPoints(md) {
+      font-size: 14px;
+    }
+  }
 }

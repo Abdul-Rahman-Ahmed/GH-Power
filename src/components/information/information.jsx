@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./information.scss";
 const Information = () => {
   return (
-    <div className="information white-text dark background cover">
+    <div className="information white-text dark background cover container">
       <h2 className="index">هل تعلم ان</h2>
       <div className="knows index">
         <div className="know">
