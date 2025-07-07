@@ -1,0 +1,43 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+.information {
+  background-image: url(../../assets/h2About/information.jpg);
+  height: fit-content;
+  padding: 40px 0;
+  h2 {
+    text-align: center;
+    padding: 30px 0;
+    font-size: 30px;
+  }
+  .knows {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    .know {
+      flex: 1 1 calc(33.333% - 50px);
+      max-width: calc(33.333% - 50px);
+      text-align: center;
+      p {
+        text-align: justify;
+      }
+      @include breakPoints(md) {
+        & {
+          flex-basis: 45%;
+          max-width: 45%;
+        }
+
+        @include breakPoints(sm) {
+          flex-basis: 90%;
+          max-width: 90%;
+        }
+      }
+      div .icon {
+        padding: 30px;
+        background-color: $primary-color;
+        font-size: 30px;
+        @include border-radius(50%);
+      }
+    }
+  }
+}

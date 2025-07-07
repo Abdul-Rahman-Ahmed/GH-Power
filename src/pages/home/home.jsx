@@ -1,7 +1,8 @@
 import { Fragment } from "react";
 import Header from "../../components/header/header";
 import Main from "../../components/main/main";
-import About from "../../components/about/about";
+import About from "../../components/about";
+import Information from "../../components/information/information";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <Main />
       <div className="contents">
         <About />
+        <Information />
       </div>
     </Fragment>
   );

@@ -42,11 +42,7 @@ ul {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
+  @include transform(translate(-50%, -50%));
 }
 
 .btn {
@@ -55,13 +51,9 @@ ul {
   display: inline-block;
   padding: 5px 25px;
   margin-top: 30px;
-  border-radius: 8px;
+  @include border-radius(8px);
   @include transition(0.3s);
   font-size: 16px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
   &:hover {
     @include transition(0.3s);
     background-color: #008053;
@@ -109,4 +101,42 @@ ul {
   .img img {
     width: 100%;
   }
+}
+
+.white-text {
+  color: $background-color;
+}
+.background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.background {
+  position: relative;
+  width: 100%;
+}
+
+.dark::after {
+  background-color: rgba(0, 0, 0, 0.47);
+}
+
+.light::after {
+  background-color: rgba(255, 255, 255, 0.196);
+}
+
+.dark::after,
+.light::after {
+  backdrop-filter: blur(2px);
+}
+.cover {
+  background-size: cover;
+}
+
+.index {
+  position: relative;
+  z-index: 1;
 }

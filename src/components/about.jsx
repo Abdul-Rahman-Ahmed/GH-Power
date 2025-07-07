@@ -1,4 +1,4 @@
-import second from "../../assets/main/second.jpg";
+import second from "../assets/main/second.jpg";
 import { Link } from "react-router-dom";
 
 const About = () => {
