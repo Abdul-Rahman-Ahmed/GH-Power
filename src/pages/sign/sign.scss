@@ -1,0 +1,196 @@
+@use "../../scss/variables" as *;
+@use "../../scss//mixins" as *;
+.page-container {
+  background-image: url(../../assets/sign.jpg);
+  background-size: cover;
+  min-height: 100vh;
+  position: relative;
+
+  .sign-page {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    height: 80%;
+    transform: translate(-50%, -50%);
+    display: flex;
+
+    .content {
+      border-radius: 0 150px 20px 0;
+      background-color: #00000099;
+      width: 50%;
+      padding: 40px 0;
+      backdrop-filter: blur(5px);
+      text-align: center;
+      transition: 0.5s;
+
+      .text {
+        font-size: 25px;
+        font-weight: bold;
+        color: $background-color;
+      }
+      img {
+        width: 300px;
+        height: 300px;
+      }
+      &.transform-left {
+        transition: 0.5s;
+        transform: translateX(-100%);
+        border-radius: 150px 0 0 20px;
+      }
+    }
+
+    .sign {
+      border-radius: 20px 0 0 150px;
+      width: 50%;
+      background-color: #000000d0;
+      backdrop-filter: blur(10px);
+      transition: 0.5s;
+      .form-holder {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+
+        form {
+          padding: 0 30px;
+          width: 60%;
+          position: relative;
+
+          h1 {
+            color: $primary-color;
+            font-size: 30px;
+            text-align: center;
+          }
+
+          .inp-container {
+            margin: 20px 0;
+            padding: 10px 0;
+            input {
+              border: none;
+              color: $background-color;
+              border-bottom: $background-color solid 2px;
+              outline: none;
+              background-color: transparent;
+              width: 100%;
+
+              &::-webkit-input-placeholder {
+                color: $background-color;
+              }
+            }
+          }
+
+          button {
+            background-color: $primary-color;
+            padding: 10px 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            color: $background-color;
+            font-size: 20px;
+            transition: 0.5s;
+            &:hover {
+              background-color: #008053;
+              transition: 0.5s;
+            }
+          }
+
+          .another-way {
+            display: flex;
+            text-align: center;
+            color: $background-color;
+            margin: 20px 0;
+            p {
+              font-size: 15px;
+              width: 50%;
+            }
+            a {
+              font-size: 15px;
+              width: 50%;
+              cursor: pointer;
+              color: $primary-color;
+            }
+          }
+          &::before,
+          &::after {
+            content: "";
+            border-right: solid 2px #eee;
+            position: absolute;
+            left: 0;
+            height: 40%;
+          }
+
+          &::before {
+            top: 0;
+          }
+
+          &::after {
+            bottom: 0;
+          }
+        }
+
+        .links {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 25px;
+          position: relative;
+          margin: auto;
+          .social-icon {
+            margin: 20px auto;
+            font-size: 30px;
+            color: $background-color;
+            border-radius: 50%;
+            cursor: pointer;
+          }
+
+          &::after {
+            content: "أو";
+            color: $background-color;
+            position: absolute;
+            right: -100%;
+            font-size: 35px;
+          }
+        }
+      }
+      &.transform-right {
+        transform: translateX(100%);
+        transition: 0.5s;
+        border-radius: 0 20px 150px 0;
+      }
+    }
+    @include breakPoints(md) {
+      & {
+        flex-direction: column;
+        position: relative;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 80%;
+        transform: translate(0%, 0%);
+
+        .content,
+        .sign {
+          margin: 10px 20px;
+          width: calc(100% - 40px);
+          border-radius: 10px;
+
+          .form-holder {
+            position: relative;
+            top: 0%;
+            width: 100%;
+            padding: 40px 0;
+            margin: auto;
+            left: 0%;
+            transform: translate(0%, 0%);
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}

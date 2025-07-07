@@ -1,0 +1,131 @@
+@use "../../scss/variables" as *;
+@use "../../scss/mixins" as *;
+
+header {
+  position: fixed;
+  top: 0;
+  width: calc(100% - 100px);
+  z-index: 1;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: $background-color;
+  border-bottom: 1px solid $black-color;
+  box-shadow: #0009 0px 0px 10px;
+
+  @include breakPoints(xl) {
+    & {
+      font-size: 12px;
+      width: calc(100% - 50px);
+    }
+  }
+
+  .nav-links {
+    display: flex;
+
+    @include breakPoints(xl) {
+      & {
+        display: none;
+      }
+    }
+
+    li:not(:last-child) {
+      a {
+        color: $primary-color;
+        padding: 10px 15px;
+
+        &:hover,
+        &:active {
+          border-bottom: solid 2px $primary-color;
+        }
+      }
+    }
+
+    li:last-child {
+      margin-right: 30px;
+    }
+  }
+
+  .bars {
+    position: relative;
+    .icon {
+      display: none;
+      @include breakPoints(xl) {
+        & {
+          display: block;
+        }
+      }
+
+      border: solid 4px $primary-color;
+      color: $primary-color;
+      padding: 4px 6px;
+      font-size: 35px;
+      cursor: pointer;
+      border-radius: 4px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+      -o-border-radius: 4px;
+      @include transition(0.3s);
+    }
+  }
+
+  .small-devices {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    width: calc(100% - 100px);
+    height: 100vh;
+    background-color: $background-color;
+    font-size: 16px;
+    @include transition(transform 0.3s ease-in-out);
+    @include transform(translateX(0));
+    &.hidden {
+      @include transform(translateX(100%));
+    }
+
+    li {
+      margin: 10px 0;
+      &:not(:last-child) a {
+        color: $primary-color;
+      }
+      &:last-child {
+        margin: 30px auto;
+      }
+    }
+
+    .close {
+      position: relative;
+
+      .icon {
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        background-color: $primary-color;
+        color: $background-color;
+        padding: 10px;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+      }
+    }
+    .small {
+      text-align: center;
+    }
+
+    @include breakPoints(xl) {
+      & {
+        width: calc(100% - 50px);
+      }
+    }
+  }
+}

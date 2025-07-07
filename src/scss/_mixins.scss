@@ -1,0 +1,43 @@
+@mixin breakPoints($size) {
+  @if $size == "s" {
+    @media (max-width: 376px) {
+      @content;
+    }
+  } @else if $size == "sm" {
+    @media (max-width: 576px) {
+      @content;
+    }
+  } @else if $size == "md" {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $size == "lg" {
+    @media (max-width: 992px) {
+      @content;
+    }
+  } @else if $size == "xl" {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  } @else if $size == "xxl" {
+    @media (max-width: 1600px) {
+      @content;
+    }
+  }
+}
+
+@mixin transition($trans) {
+  transition: $trans;
+  -webkit-transition: $trans;
+  -moz-transition: $trans;
+  -ms-transition: $trans;
+  -o-transition: $trans;
+}
+
+@mixin transform($trans) {
+  transform: $trans;
+  -webkit-transform: $trans;
+  -moz-transform: $trans;
+  -ms-transform: $trans;
+  -o-transform: $trans;
+}

@@ -1,0 +1,62 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Cairo", "Poppins", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  padding: 0 50px;
+  @include breakPoints(xl) {
+    & {
+      padding: 0 25px;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.logo {
+  height: 100px;
+  width: 100px;
+}
+
+.center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+.btn {
+  background-color: $primary-color;
+  color: $background-color;
+  padding: 10px 20px;
+  border-radius: 8px;
+  @include transition(0.3s);
+  font-size: 16px;
+  &:hover {
+    @include transition(0.3s);
+    background-color: #008053;
+  }
+}
