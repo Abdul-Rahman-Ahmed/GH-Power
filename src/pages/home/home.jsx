@@ -7,6 +7,7 @@ import WhyGreenHydrogen from "../../components/whyGreenHydrogen";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 import Explore from "../../components/explore/explore";
+import Projects from "../../components/projects/projects";
 
 const Home = () => {
   return (
@@ -25,6 +26,7 @@ const Home = () => {
           </div>
         </div>
         <Explore />
+        <Projects />
       </div>
     </Fragment>
   );

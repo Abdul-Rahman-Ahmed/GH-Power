@@ -3,20 +3,20 @@ import second from "../../assets/main/second.jpg";
 import third from "../../assets/main/third.jpg";
 import { Link } from "react-router-dom";
 import "./main.scss";
-import { useRef, useEffect, Fragment } from "react";
+import { Fragment } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+
+import "swiper/scss";
+import "swiper/scss/pagination";
+import "swiper/scss/navigation";
 
 const Main = () => {
-  let myarrow = useRef();
-  let trans = useRef();
-  let sections = useRef();
-  let intervalRef = useRef(null);
-  const bulletsRef = useRef([]);
-
   const dataSlides = [
     {
       imgSrc: first,
       text: (
-        <h2>
+        <h2 className="first-head">
           لقد حان الوقت للانتقال الى
           <span> الطاقة الخضراء </span>
           لضمان غد افضل
@@ -52,60 +52,35 @@ const Main = () => {
     },
   ];
 
-  const startAutoSlide = () => {
-    intervalRef.current = setInterval(() => {
-      const next = (trans.current / 100 + 1) % dataSlides.length;
-      updateSlide(next);
-    }, 10000);
-  };
-
-  const updateSlide = (index) => {
-    clearInterval(intervalRef.current);
-    trans.current = index * 100;
-    myarrow.current.style.transform = `translateX(${trans.current}%)`;
-
-    bulletsRef.current.forEach((el, i) =>
-      el.classList.toggle("active", i === index)
-    );
-
-    startAutoSlide();
-  };
-
-  useEffect(() => {
-    sections.current = document.querySelectorAll(
-      ".projects .sections .section"
-    );
-    myarrow.current = document.querySelector(".main-section .content");
-    trans.current = 0;
-
-    startAutoSlide();
-    return () => clearInterval(intervalRef.current);
-  }, []);
-
   return (
-    <div className="main-section">
-      <div className="content">
+    <div className="main-section swiper-wrapper-container">
+      <div className="swiper-button-next"></div>
+      <Swiper
+        className="content"
+        loop={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        pagination={{ clickable: true }}
+        navigation={{
+          prevEl: ".swiper-button-next",
+          nextEl: ".swiper-button-prev",
+        }}
+      >
         {dataSlides.map((el, key) => {
           return (
-            <div className="slide" key={key}>
+            <SwiperSlide className="slide" key={key}>
               <div className="img">
-                <img src={el.imgSrc} alt={el.imgSrc} />
+                <img src={el.imgSrc} alt="slider background" />
               </div>
               <div className="text container center-text">{el.text}</div>
-            </div>
+            </SwiperSlide>
           );
         })}
-      </div>
-      <div className="bullets">
-        {[...Array(dataSlides.length)].map((ele, i) => (
-          <div
-            className={`bullet ${i === 0 ? "active" : ""}`}
-            key={i}
-            ref={(el) => (bulletsRef.current[i] = el)}
-            onClick={() => updateSlide(i)}
-          ></div>
-        ))}
-      </div>
+      </Swiper>
+      <div className="swiper-button-prev"></div>
     </div>
   );
 };
