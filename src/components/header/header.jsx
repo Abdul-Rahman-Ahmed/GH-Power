@@ -18,7 +18,9 @@ const Header = () => {
     return (
       <Fragment>
         <li>
-          <Link to="/">الرئيسية</Link>
+          <Link to="/" className="active">
+            الرئيسية
+          </Link>
         </li>
         <li>
           <Link to="/ar/h2-about">عن الهيدروجين الاخضر</Link>

@@ -1,0 +1,38 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+.follow {
+  background-image: url(../../assets/follow.png);
+  text-align: center;
+  height: 250px;
+  .links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding-top: 50px;
+    a {
+      color: #000;
+      background-color: $background-color;
+      text-align: center;
+      @include border-radius(50%);
+      width: 45px;
+      height: 45px;
+      display: block;
+      position: relative;
+      font-size: 25px;
+      transition: 0.5s;
+      -webkit-transition: 0.5s;
+      -moz-transition: 0.5s;
+      -ms-transition: 0.5s;
+      -o-transition: 0.5s;
+      &:hover {
+        color: $background-color;
+        background-color: $primary-color;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+      }
+    }
+  }
+}

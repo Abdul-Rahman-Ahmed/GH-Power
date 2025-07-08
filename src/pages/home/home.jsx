@@ -11,6 +11,8 @@ import SlideCards from "../../components/sliderCards/slideCards";
 import { Link } from "react-router-dom";
 import Contact from "../../components/contact/contact";
 import first from "../../assets/main/first.jpg";
+import Follow from "../../components/follow/Follow";
+import future from "../../assets/h2About/future.jpg";
 
 const Home = () => {
   const projects = [
@@ -58,8 +60,32 @@ const Home = () => {
             <Link className="btn">للمزيد</Link>
           </div>
         </div>
-        <SlideCards data={books} heading="ابرز الإنتاج الفكرى" />
+        <div className="flex container">
+          <div className="img">
+            <img src={future} alt="future" />
+          </div>
+          <div className="content">
+            <p className="before-heading">- مستقبل الهيدروجين الأخضر -</p>
+            <h2>مستقبل الهيدروجين الأخضر</h2>
+            <p className="paragraph">
+              عصر جديد من استدامة الطاقة والإشراف البيئي
+            </p>
+            <p>
+              يستعد الهيدروجين الأخضر لإحداث ثورة في مشهد الطاقة لدينا، حيث يقدم
+              حلاً مستدامًا لتحديات المناخ الملحة التي نواجهها. ومع استمرار
+              ازدهار مصادر الطاقة المتجددة، سيزداد إنتاج الهيدروجين الأخضر، مما
+              يؤدي إلى خفض التكاليف وتوسيع إمكانية الوصول إليه. ومن الصناعات
+              التي تعمل على إزالة الكربون إلى تشغيل وسائل النقل الخالية من
+              الانبعاثات، يحمل الهيدروجين الأخضر المفتاح لمستقبل أنظف وأكثر
+              مرونة. ومع الابتكار المستمر والدعم العالمي المتزايد، فإن عصر
+              الهيدروجين الأخضر يَعِد ببدء عصر جديد من استدامة الطاقة والإشراف
+              البيئي.
+            </p>
+          </div>
+        </div>
         <Contact />
+        <SlideCards data={books} heading="ابرز الإنتاج الفكرى" />
+        <Follow />
       </div>
     </Fragment>
   );
