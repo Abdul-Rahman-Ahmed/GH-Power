@@ -1,22 +1,14 @@
 import { Link } from "react-router-dom";
-import first from "../../assets/main/first.jpg";
-import "./projects.scss";
+import "./slideCards.scss";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/scss";
 import "swiper/scss/navigation";
 
-const Projects = () => {
-  const projects = [
-    { to: "#", title: "المشروع الاول", img: first },
-    { to: "#", title: "المشروع الثاني", img: first },
-    { to: "#", title: "المشروع الثالث", img: first },
-    { to: "#", title: "المشروع الرابع", img: first },
-    { to: "#", title: "المشروع الخامس", img: first },
-  ];
+const Projects = ({ data, heading }) => {
   return (
     <div className="projects container color-background">
-      <h2>المشروعات المميزة</h2>
+      <h2>{heading}</h2>
 
       <div className="swiper-wrapper-container">
         <div className="swiper-button-prev"></div>
@@ -34,7 +26,7 @@ const Projects = () => {
             1280: { slidesPerView: 4 },
           }}
         >
-          {projects.map((proj, index) => (
+          {data.map((proj, index) => (
             <SwiperSlide key={index} className="cards">
               <Link to={proj.to} className="card">
                 <div className="img">

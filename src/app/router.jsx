@@ -4,7 +4,7 @@ import SignPage from "../pages/sign/sign";
 
 const routers = createBrowserRouter([
   {
-    path: "/",
+    path: "/GH-Power",
     element: <Home />,
   },
   {
