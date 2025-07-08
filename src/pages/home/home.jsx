@@ -6,6 +6,7 @@ import Information from "../../components/information/information";
 import WhyGreenHydrogen from "../../components/whyGreenHydrogen";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteRight } from "@fortawesome/free-solid-svg-icons";
+import Explore from "../../components/explore/explore";
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
             <FontAwesomeIcon icon={faQuoteRight} />
           </div>
         </div>
+        <Explore />
       </div>
     </Fragment>
   );

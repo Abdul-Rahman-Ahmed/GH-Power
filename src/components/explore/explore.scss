@@ -1,0 +1,71 @@
+@use "../../scss/variables" as *;
+@use "../../scss/mixins" as *;
+.explore {
+  padding: 30px 0;
+  h2 {
+    text-align: center;
+  }
+  .sections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .section {
+      background-image: url(../../assets/main/explorer/instituations.jpg);
+      flex: 1 1 25%;
+      max-width: 25%;
+      height: 350px;
+      background-size: cover;
+      position: relative;
+      cursor: pointer;
+      @include breakPoints(lg) {
+        & {
+          flex: 1 1 45%;
+          max-width: 45%;
+          margin: 5px;
+        }
+      }
+
+      @include breakPoints(sm) {
+        & {
+          flex: 1 1 100%;
+          max-width: 100%;
+        }
+      }
+
+      &:nth-child(2) {
+        background-image: url(../../assets/main/explorer/projects.jpg);
+      }
+      &:nth-child(3) {
+        background-image: url(../../assets/main/explorer/conferences.jpg);
+      }
+      &:last-child {
+        background-image: url(../../assets/main/explorer/records.jpg);
+      }
+
+      .text {
+        position: absolute;
+        bottom: 30px;
+        left: 20px;
+        right: 20px;
+        color: #fff;
+
+        @include transition(0.3s);
+
+        .icon {
+          font-size: 20px;
+          opacity: 0;
+          @include transition(0.3s);
+        }
+      }
+
+      &:hover .text {
+        bottom: 60px;
+        @include transition(0.3s);
+        .icon {
+          opacity: 1;
+          @include transition(0.3s);
+        }
+      }
+    }
+  }
+}
