@@ -50,6 +50,9 @@ const SignForm = () => {
     <div className={!state ? "sign transform-right" : "sign"}>
       <div className="form-holder">
         {state ? signUpForm : signInForm}
+        <div className="or">
+          <div className="center-text">أو</div>
+        </div>
         <div className="links">
           <FontAwesomeIcon icon={faFacebook} className="social-icon" />
           <FontAwesomeIcon icon={faGoogle} className="social-icon" />

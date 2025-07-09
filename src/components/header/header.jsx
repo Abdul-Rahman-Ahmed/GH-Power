@@ -33,7 +33,7 @@ const Header = () => {
         <div className="close" onClick={menuHandler}>
           <FontAwesomeIcon icon={faXmark} className="icon" />
         </div>
-        <ul className="small container">
+        <ul className="small container center-text">
           <Links />
         </ul>
       </div>

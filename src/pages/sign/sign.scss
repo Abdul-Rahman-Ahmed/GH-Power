@@ -3,7 +3,7 @@
 .page-container {
   background-image: url(../../assets/sign.jpg);
   background-size: cover;
-  min-height: 100vh;
+  min-height: 100dvh;
   position: relative;
 
   .sign-page {
@@ -29,9 +29,12 @@
       img {
         width: 300px;
         height: 300px;
+        @include breakPoints(lg) {
+          width: 250px;
+          height: 250px;
+        }
       }
       &.transform-left {
-        @include transition(0.5s);
         @include transform(translateX(-100%));
         @include border-radius(150px 0 0 20px);
       }
@@ -110,6 +113,12 @@
               width: 50%;
             }
           }
+        }
+
+        .or {
+          position: relative;
+          color: $background-color;
+          font-size: 35px;
           &::before,
           &::after {
             content: "";
@@ -117,18 +126,16 @@
             border-right: solid 2px $background-color;
             height: 40%;
           }
-
           &::before {
             top: 0;
           }
-
           &::after {
             bottom: 0;
           }
         }
 
         .links {
-          @include flex(center, normal, 0, nowrap);
+          @include flex(center, n, n, n);
           flex-direction: column;
           padding: 25px;
           position: relative;
@@ -140,22 +147,14 @@
             @include border-radius(50%);
             cursor: pointer;
           }
-
-          &::after {
-            content: "أو";
-            color: $background-color;
-            @include position(absolute, n, -100%, n, n);
-            font-size: 35px;
-          }
         }
       }
       &.transform-right {
         @include transform(translateX(100%));
-        @include transition(0.5s);
         @include border-radius(0 20px 150px 0);
       }
     }
-    @include breakPoints(md) {
+    @include breakPoints(lg) {
       @include position(relative, 0, n, n, 0);
       @include transform(translate(0%, 0%));
       flex-direction: column;
@@ -174,7 +173,21 @@
           margin: auto;
           display: flex;
         }
+        &.transform-left,
+        &.transform-right {
+          @include border-radius(10px);
+        }
+        &.transform-left {
+          @include transform(translateY(calc(100% + 20px)));
+        }
+        &.transform-right {
+          @include transform(translateY(calc(-100% - 20px)));
+        }
       }
+    }
+    .transform-left,
+    .transform-right {
+      @include transition(0.5s);
     }
   }
 }
