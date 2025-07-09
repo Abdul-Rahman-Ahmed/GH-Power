@@ -6,7 +6,7 @@
     text-align: center;
   }
   .sections {
-    @include flex(center, normal, 0, wrap);
+    @include flex(center, n, n, wrap);
     .section {
       background-image: url(../../assets/main/explorer/instituations.jpg);
       flex: 1 1 25%;

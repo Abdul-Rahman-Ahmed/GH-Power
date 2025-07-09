@@ -3,7 +3,7 @@
 
 header {
   @include position(fixed, 0, n, n, n);
-  @include flex(space-between, center, 0, nowrap);
+  @include flex(space-between, center, n, n);
   border-bottom: 1px solid $black-color;
   background-color: $background-color;
   box-shadow: #0009 0px 0px 10px;
@@ -18,7 +18,7 @@ header {
     font-size: 12px;
   }
   .nav-links {
-    @include flex(normal, center, 0, nowrap);
+    @include flex(n, center, n, n);
     @include breakPoints(xl) {
       display: none;
     }
@@ -89,9 +89,7 @@ header {
     }
 
     @include breakPoints(xl) {
-      & {
-        width: calc(100% - 50px);
-      }
+      width: calc(100% - 50px);
     }
   }
 }

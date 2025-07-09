@@ -20,7 +20,9 @@ const Footer = () => {
           </Link>
           <p>لقد حان الوقت للانتقال الى الطاقة الخضراء لضمان غد افضل</p>
         </div>
-        <Links />
+        <ul className="nav-links">
+          <Links />
+        </ul>
         <ul className="follow-us">
           <li>
             <a

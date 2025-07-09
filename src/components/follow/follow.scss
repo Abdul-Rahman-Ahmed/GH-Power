@@ -6,7 +6,7 @@
   text-align: center;
   height: 250px;
   .links {
-    @include flex(center, normal, 20px, nowrap);
+    @include flex(center, n, 20px, n);
     padding-top: 50px;
     a {
       @include border-radius(50%);

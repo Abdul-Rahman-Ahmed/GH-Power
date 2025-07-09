@@ -13,25 +13,25 @@
     margin-bottom: 40px;
   }
   .knows {
-    @include flex(center, normal, 50px, wrap);
+    @include flex(center, n, 50px, wrap);
     .know {
       flex: 1 1 calc(33.333% - 33.33333px);
       max-width: calc(33.333% - 33.33333px);
       min-width: 300px;
       text-align: center;
+      h3 {
+        color: $primary-color;
+      }
       p {
-        text-align: justify;
+        line-height: 1.8;
       }
       @include breakPoints(md) {
-        & {
-          flex-basis: 45%;
-          max-width: 45%;
-        }
-
-        @include breakPoints(sm) {
-          flex-basis: 90%;
-          max-width: 90%;
-        }
+        flex-basis: 45%;
+        max-width: 45%;
+      }
+      @include breakPoints(sm) {
+        flex-basis: 90%;
+        max-width: 90%;
       }
       .icon {
         @include border-radius(50%);

@@ -52,10 +52,18 @@
 
 @mixin flex($justify, $align, $gap, $wrap) {
   display: flex;
-  justify-content: $justify;
-  align-items: $align;
-  gap: $gap;
-  flex-wrap: $wrap;
+  @if $justify != n {
+    justify-content: $justify;
+  }
+  @if $align != n {
+    align-items: $align;
+  }
+  @if $wrap != n {
+    flex-wrap: $wrap;
+  }
+  @if $gap != n {
+    gap: $gap;
+  }
 }
 
 @mixin position($position, $top, $right, $bottom, $left) {

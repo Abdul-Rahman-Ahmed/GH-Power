@@ -19,9 +19,7 @@ body {
 .container:not(header) {
   padding: 50px;
   @include breakPoints(xl) {
-    & {
-      padding: 50px 25px;
-    }
+    padding: 50px 25px;
   }
 }
 
@@ -68,7 +66,7 @@ ul {
 }
 
 .flex {
-  @include flex(center, center, 20px, nowrap);
+  @include flex(center, center, 20px, n);
   div {
     width: 50%;
     .paragraph {
@@ -83,11 +81,9 @@ ul {
   }
 
   @include breakPoints(lg) {
-    & {
-      flex-direction: column;
-      div {
-        width: 100%;
-      }
+    flex-direction: column;
+    div {
+      width: 100%;
     }
   }
 }
@@ -136,7 +132,7 @@ img {
   @include position(absolute, 50%, n, n, n);
   @include transform(translateY(-50%));
   @include border-radius(50%);
-  @include flex(center, center, 0, nowrap);
+  @include flex(center, center, n, n);
   @include transition(0.3s);
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.4);

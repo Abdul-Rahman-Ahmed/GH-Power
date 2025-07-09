@@ -1,8 +1,9 @@
+import { Fragment } from "react";
 import { Link } from "react-router-dom";
 
 const Links = () => {
   return (
-    <ul className="nav-links">
+    <Fragment>
       <li>
         <Link to="/" className="active">
           الرئيسية
@@ -34,7 +35,7 @@ const Links = () => {
           تسجيل الدخول
         </Link>
       </li>
-    </ul>
+    </Fragment>
   );
 };
 
