@@ -5,9 +5,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/scss";
 import "swiper/scss/navigation";
 
-const Projects = ({ data, heading }) => {
+const SlideCards = ({ data, heading }) => {
   return (
-    <div className="projects container color-background">
+    <div className="slide-cards container color-background">
       <h2>{heading}</h2>
 
       <div className="swiper-wrapper-container">
@@ -30,7 +30,7 @@ const Projects = ({ data, heading }) => {
             <SwiperSlide key={index} className="cards">
               <Link to={proj.to} className="card">
                 <div className="img">
-                  <img src={proj.img} alt="project" />
+                  <img src={proj.img} alt="card-image" />
                 </div>
                 <div className="text">
                   <h3>{proj.title}</h3>
@@ -47,4 +47,4 @@ const Projects = ({ data, heading }) => {
   );
 };
 
-export default Projects;
+export default SlideCards;

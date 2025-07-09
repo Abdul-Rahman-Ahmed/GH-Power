@@ -1,0 +1,54 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.qoute {
+  background-image: url(../assets/h2About/qoute.jpg);
+  height: 300px;
+  div {
+    border: solid 1px $helper-color;
+    border-right: none;
+    border-left: none;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 18px;
+    padding: 20px;
+    z-index: 1;
+    width: 70%;
+    @include breakPoints(md) {
+      font-size: 14px;
+    }
+  }
+}
+
+.comeingConference {
+  background-image: url(../assets/main/upcomingconferences.jpg);
+  color: $background-color;
+  text-align: center;
+  height: 250px;
+  padding: 50px;
+  @include breakPoints(sm) {
+    height: 200px;
+  }
+  h2 {
+    font-size: 40px;
+    @include breakPoints(md) {
+      font-size: 24px;
+    }
+    @include breakPoints(sm) {
+      font-size: 22px;
+    }
+  }
+  h3 {
+    color: $background-color;
+    padding-bottom: 20px;
+    font-size: 30px;
+    margin: 0;
+    @include breakPoints(md) {
+      font-size: 18px;
+    }
+    @include breakPoints(sm) {
+      font-size: 16px;
+    }
+  }
+}

@@ -13,6 +13,7 @@ import Contact from "../../components/contact/contact";
 import first from "../../assets/main/first.jpg";
 import Follow from "../../components/follow/Follow";
 import future from "../../assets/h2About/future.jpg";
+import Footer from "../../components/footer/footer";
 
 const Home = () => {
   const projects = [
@@ -86,6 +87,7 @@ const Home = () => {
         <Contact />
         <SlideCards data={books} heading="ابرز الإنتاج الفكرى" />
         <Follow />
+        <Footer />
       </div>
     </Fragment>
   );

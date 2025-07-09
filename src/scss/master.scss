@@ -39,9 +39,7 @@ ul {
 }
 
 .center-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  @include position(absolute, 50%, n, n, 50%);
   @include transform(translate(-50%, -50%));
 }
 
@@ -70,10 +68,7 @@ ul {
 }
 
 .flex {
-  display: flex;
-  justify-items: center;
-  align-items: center;
-  gap: 20px;
+  @include flex(center, center, 20px, nowrap);
   div {
     width: 50%;
     .paragraph {
@@ -97,7 +92,7 @@ ul {
   }
 }
 
-.img img {
+img {
   width: 100%;
   filter: drop-shadow(0px 0px 5px black);
   -webkit-filter: drop-shadow(0px 0px 5px black);
@@ -109,9 +104,7 @@ ul {
 
 .background::after {
   content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+  @include position(absolute, 0, n, n, 0);
   width: 100%;
   height: 100%;
 }
@@ -122,14 +115,6 @@ ul {
 
 .dark::after {
   background-color: rgba(0, 0, 0, 0.47);
-}
-
-.light::after {
-  background-color: rgba(255, 255, 255, 0.196);
-}
-
-.dark::after,
-.light::after {
   backdrop-filter: blur(2px);
 }
 
@@ -142,46 +127,23 @@ ul {
   z-index: 1;
 }
 
-.qoute {
-  background-image: url(../assets/h2About/qoute.jpg);
-  height: 300px;
-  div {
-    width: 70%;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    border: solid 1px $helper-color;
-    border-right: none;
-    border-left: none;
-    padding: 20px;
-    font-style: italic;
-    z-index: 1;
-    @include breakPoints(md) {
-      font-size: 14px;
-    }
-  }
-}
-
 .contents h2 {
   color: $primary-color;
 }
 
 .swiper-button-next,
 .swiper-button-prev {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  @include position(absolute, 50%, n, n, n);
+  @include transform(translateY(-50%));
+  @include border-radius(50%);
+  @include flex(center, center, 0, nowrap);
+  @include transition(0.3s);
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
-  @include transition(0.3s);
 
   &:hover {
     background-color: $primary-color;
@@ -208,47 +170,5 @@ ul {
 
   .swiper-button-prev {
     left: 0;
-  }
-}
-
-.comeingConference {
-  height: 300px;
-  background-image: url(../assets/main/upcomingconferences.jpg);
-
-  text-align: center;
-  color: #fff;
-  padding: 50px;
-  h2 {
-    font-size: 40px;
-  }
-  h3 {
-    color: $background-color;
-    font-size: 30px;
-    margin: 0;
-    padding-bottom: 20px;
-  }
-}
-
-@include breakPoints(md) {
-  .comeingConference {
-    height: 250px;
-  }
-  .comeingConference h2 {
-    font-size: 24px;
-  }
-  .comeingConference h3 {
-    font-size: 18px;
-  }
-}
-
-@include breakPoints(sm) {
-  .comeingConference {
-    height: 200px;
-  }
-  .comeingConference h2 {
-    font-size: 22px;
-  }
-  .comeingConference h3 {
-    font-size: 16px;
   }
 }

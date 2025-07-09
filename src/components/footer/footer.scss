@@ -1,0 +1,88 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+
+footer {
+  .main {
+    @include flex(center, center, 30px, nowrap);
+    @include breakPoints(lg) {
+      flex-wrap: wrap;
+    }
+    @include breakPoints(sm) {
+      flex-direction: column;
+    }
+    background-color: #294b29;
+    color: $background-color;
+    text-align: center;
+
+    .info {
+      width: 350px;
+    }
+
+    .nav-links {
+      @include flex(center, center, 20px, wrap);
+      @include breakPoints(sm) {
+        flex-direction: column;
+        text-align: center;
+      }
+      li {
+        width: fit-content;
+        @include breakPoints(sm) {
+          width: 100%;
+        }
+        a {
+          @include transition(0.3s);
+          color: $background-color;
+          padding: 5px 10px;
+          &:not(.btn):hover,
+          &.active {
+            @include transition(0.3s);
+            color: $primary-color;
+          }
+          &.btn {
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .follow-us {
+      @include flex(center, normal, 20px, nowrap);
+      li {
+        a {
+          @include transition(0.3s);
+          display: block;
+          font-size: 18px;
+          color: $background-color;
+          &:hover {
+            @include transition(0.3s);
+          }
+        }
+
+        &:first-child a:hover {
+          color: #0866ff;
+        }
+
+        &:nth-child(2) a:hover {
+          color: #d13d8a;
+        }
+
+        &:nth-child(3) a:hover {
+          color: #666666;
+        }
+
+        &:last-child a:hover {
+          color: #ff0000;
+        }
+      }
+    }
+  }
+
+  .copy-right {
+    border-top: solid 1px #fff9;
+    color: $background-color;
+    background-color: #294b29;
+    text-align: center;
+    direction: ltr;
+    padding: 15px 0;
+  }
+}

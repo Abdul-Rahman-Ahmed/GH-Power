@@ -71,7 +71,7 @@ const Main = () => {
       >
         {dataSlides.map((el, key) => {
           return (
-            <SwiperSlide className="slide" key={key}>
+            <SwiperSlide key={key}>
               <div className="img">
                 <img src={el.imgSrc} alt="slider background" />
               </div>

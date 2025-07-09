@@ -1,15 +1,11 @@
 @use "../../scss/mixins" as *;
 @use "../../scss/variables" as *;
+
 .information {
   background-image: url(../../assets/h2About/information.jpg);
-  height: fit-content;
-  padding-top: 40px;
-  padding-bottom: 40px;
   width: calc(100% - 100px);
   @include breakPoints(xl) {
-    & {
-      width: calc(100% - 50px);
-    }
+    width: calc(100% - 50px);
   }
   h2 {
     text-align: center;
@@ -17,10 +13,7 @@
     margin-bottom: 40px;
   }
   .knows {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 50px;
+    @include flex(center, normal, 50px, wrap);
     .know {
       flex: 1 1 calc(33.333% - 33.33333px);
       max-width: calc(33.333% - 33.33333px);
@@ -40,11 +33,11 @@
           max-width: 90%;
         }
       }
-      div .icon {
-        padding: 30px;
-        background-color: $primary-color;
-        font-size: 30px;
+      .icon {
         @include border-radius(50%);
+        background-color: $primary-color;
+        padding: 30px;
+        font-size: 30px;
       }
     }
   }

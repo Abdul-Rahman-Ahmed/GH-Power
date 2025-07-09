@@ -49,3 +49,27 @@
   -ms-border-radius: $border;
   -o-border-radius: $border;
 }
+
+@mixin flex($justify, $align, $gap, $wrap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+  flex-wrap: $wrap;
+}
+
+@mixin position($position, $top, $right, $bottom, $left) {
+  position: $position;
+  @if $top != n {
+    top: $top;
+  }
+  @if $right != n {
+    right: $right;
+  }
+  @if $bottom != n {
+    bottom: $bottom;
+  }
+  @if $left != n {
+    left: $left;
+  }
+}

@@ -1,6 +1,7 @@
 @use "../../scss/variables" as *;
 @use "../../scss/mixins" as *;
-.projects {
+
+.slide-cards {
   position: relative;
   h2 {
     text-align: center;
@@ -8,24 +9,22 @@
   }
 
   h3 {
-    font-size: 14px;
     color: $primary-color;
+    font-size: 14px;
   }
   .swiper-wrapper-container {
     position: relative;
   }
 
   .cards {
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
+    @include flex(center, normal, 0, nowrap);
     .card {
       background: #fff;
       @include border-radius(12px);
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       @include transition(transform 0.3s ease);
       &:hover {
-        transform: translateY(-10px);
+        @include transform(translateY(-10px));
       }
 
       img {
